@@ -12,7 +12,7 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
-func handler(e events.CognitoEventUserPoolsPostConfirmation) error {
+func demo1A(e events.CognitoEventUserPoolsPostConfirmation) error {
 	url := fmt.Sprintf("postgres://%v:%v@%v:%v/%v?sslmode=disable",
 		os.Getenv("USER"),
 		os.Getenv("PASS"),
@@ -24,7 +24,7 @@ func handler(e events.CognitoEventUserPoolsPostConfirmation) error {
 	db, err := gorm.Open("postgres", url)
 
 	if err != nil {
-		print("ERROR CONNECT === ", err)
+		fmt.Print("ERROR CONNECT === ", err)
 		return err
 	}
 
@@ -38,6 +38,6 @@ func handler(e events.CognitoEventUserPoolsPostConfirmation) error {
 	return nil
 }
 
-func main() {
-	lambda.Start(handler)
+func demo1() {
+	lambda.Start(demo1A)
 }
