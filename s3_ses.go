@@ -17,9 +17,9 @@ import (
 const Region = "ap-northeast-1"
 
 var (
-	From = "6vofxx@gmail.com"
-	To1  = "vofxx@icloud.com"
-	To2  = "6vofxx@gmail.com"
+	From = "from@example.com"
+	To1  = "to1@example.com"
+	To2  = "to2@example.com"
 
 	Subject = "From SES"
 
